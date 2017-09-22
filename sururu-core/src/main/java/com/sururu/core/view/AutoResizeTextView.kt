@@ -100,7 +100,7 @@ class AutoResizeTextView @JvmOverloads constructor(context: Context, attrs: Attr
     }
 
     fun isValidWordWrap(before: Char, after: Char): Boolean {
-        return before == ' ' || before == '-'
+        return before == ' ' || after == '-'
     }
 
     override fun setAllCaps(allCaps: Boolean) {
