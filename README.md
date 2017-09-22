@@ -62,9 +62,10 @@ Be aware of the latest version.
 
 ## Credits
 Sururu was developed from the project [Ocypode](https://github.com/Ocypode/ocypode)
-Sururu is brought to you by [Macksuel Santos](https://github.com/macksuelsantos) and [Jairo Barros Junior](https://github.com/jairobjunior)
 
-[contributors to the project](https://github.com/macksuelsantos/sururu/graphs/contributors). If you have feature suggestions or bug reports, feel free to help out by sending pull requests or by [creating new issues](https://github.com/macksuelsantos/sururu/issues/new). If you're using Sururu in your project, attribution would be nice.
+Sururu is brought to you by [Macksuel Santos](https://github.com/macksuelsantos) and [Jairo Barros Junior](https://github.com/jairobjunior), [contributors to the project](https://github.com/macksuelsantos/sururu/graphs/contributors). 
+
+If you have feature suggestions or bug reports, feel free to help out by sending pull requests or by [creating new issues](https://github.com/macksuelsantos/sururu/issues/new). If you're using Sururu in your project, attribution would be nice.
 
 ## License
 Copyright © 2017 Macksuel Santos
