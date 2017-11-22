@@ -15,18 +15,18 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 abstract class RestClient {
 
-    private fun createRetrofit(): Retrofit {
+    open fun createRetrofit(): Retrofit {
         return Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
                 .baseUrl(getBaseUrl)
                 .build()
     }
 
-    protected fun create(clazz: Class<*>): Any {
+    open fun create(clazz: Class<*>): Any {
         return createRetrofit().create(clazz)
     }
 
-    protected fun <T> request(call: Call<T>, handler: RequestHandler<T>) {
+    open fun <T> request(call: Call<T>, handler: RequestHandler<T>) {
         val callback = object : Callback<T> {
             override fun onResponse(c: Call<T>, response: Response<T>) {
                 if (response.isSuccessful) {
