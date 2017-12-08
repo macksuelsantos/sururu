@@ -1,24 +1,24 @@
 package com.sururu.core.utility.validation
 
-object StringValidation {
+class StringValidation {
 
-    fun isEmpty(value: String): Boolean {
+    open fun isEmpty(value: String): Boolean {
         return isNull(value) || "" == value.trim { it <= ' ' }
     }
 
-    fun isNotEmpty(value: String): Boolean {
+    open fun isNotEmpty(value: String): Boolean {
         return !isEmpty(value)
     }
 
-    fun isNull(value: String?): Boolean {
+    open fun isNull(value: String?): Boolean {
         return value == null
     }
 
-    fun isNotNull(value: String?): Boolean {
+    open fun isNotNull(value: String?): Boolean {
         return value != null
     }
 
-    fun isValidEmail(target: CharSequence?): Boolean {
+    open fun isValidEmail(target: CharSequence?): Boolean {
         return !(target == null || isEmpty(target.toString())) && android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches()
     }
 }

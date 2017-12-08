@@ -3,9 +3,9 @@ package com.sururu.core.utility.formatter
 import java.text.SimpleDateFormat
 import java.util.Locale
 
-object DateFormatter {
+class DateFormatter {
 
-    fun getDayWithSuffix(day: Int): CharSequence {
+    open fun getDayWithSuffix(day: Int): CharSequence {
         if (day in 1..31) {
             if (day in 11..13) {
                 return day.toString() + "th"
@@ -22,7 +22,7 @@ object DateFormatter {
         throw IllegalArgumentException("The day of the month should be between 1 and 31.")
     }
 
-    fun simpleDateFormat(pattern: String): SimpleDateFormat {
+    open fun simpleDateFormat(pattern: String): SimpleDateFormat {
         try {
             return SimpleDateFormat(pattern, Locale.getDefault())
         } catch (e: IllegalArgumentException) {

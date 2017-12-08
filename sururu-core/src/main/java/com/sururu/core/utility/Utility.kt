@@ -5,9 +5,9 @@ import android.content.Context
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 
-object Utility {
+class Utility {
 
-    fun hideKeyboard(mActivity: Activity?, view: View?) {
+    open fun hideKeyboard(mActivity: Activity?, view: View?) {
         if (mActivity != null) {
             val inputManager = mActivity.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             if (view != null)

@@ -2,10 +2,13 @@ package com.sururu.core.activity.fragment
 
 import android.app.Service
 import android.content.Context
+import android.content.Intent
 import android.content.ServiceConnection
 import android.os.Bundle
 import android.support.annotation.AnimRes
 import android.support.v4.app.Fragment
+import com.sururu.core.R
+import com.sururu.core.activity.IResultCallbackActivity
 import com.sururu.core.component.delegate.IStartActivityDelegate
 import com.sururu.core.component.delegate.StartActivityDelegate
 import com.sururu.core.component.delegate.adaptor.StartFragmentAdaptor
@@ -78,6 +81,22 @@ abstract class AbstractSururuFragment : Fragment(), IStartActivityDelegate {
 
     override fun bindService(service: Service, serviceClass: Class<*>, serviceConnection: ServiceConnection) {
         mStartActivityDelegate!!.bindService(service, serviceClass, serviceConnection)
+    }
+
+    override fun openBrowser(url: String) {
+        mStartActivityDelegate!!.openBrowser(url)
+    }
+
+    override fun launchSubActivity(subActivityClass: Class<*>, callback: IResultCallbackActivity) {
+        mStartActivityDelegate!!.launchSubActivity(subActivityClass, callback)
+    }
+
+    override fun launchSubActivity(i: Intent, callback: IResultCallbackActivity) {
+        mStartActivityDelegate!!.launchSubActivity(i, callback)
+    }
+
+    override fun pushActivityWithAnimationSettingFlagClearTop(clazz: Class<*>) {
+        mStartActivityDelegate!!.goToActivityWithAnimationSettingFlagClearTop(clazz, R.anim.slide_left_enter, R.anim.slide_left_exit)
     }
 
 }
