@@ -7,11 +7,13 @@ import android.view.inputmethod.InputMethodManager
 
 class Utility {
 
-    open fun hideKeyboard(mActivity: Activity?, view: View?) {
-        if (mActivity != null) {
-            val inputManager = mActivity.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-            if (view != null)
-                inputManager.hideSoftInputFromWindow(view.windowToken, 0)
+    companion object {
+        fun hideKeyboard(mActivity: Activity?, view: View?) {
+            if (mActivity != null) {
+                val inputManager = mActivity.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                if (view != null)
+                    inputManager.hideSoftInputFromWindow(view.windowToken, 0)
+            }
         }
     }
 }
