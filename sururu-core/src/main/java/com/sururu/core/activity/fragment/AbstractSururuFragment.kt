@@ -99,4 +99,24 @@ abstract class AbstractSururuFragment : Fragment(), IStartActivityDelegate {
         mStartActivityDelegate!!.goToActivityWithAnimationSettingFlagClearTop(clazz, R.anim.slide_left_enter, R.anim.slide_left_exit)
     }
 
+    protected fun replaceFragment(fragmentId: Int, fragment: Fragment) {
+        val transaction = childFragmentManager.beginTransaction()
+        transaction.replace(fragmentId, fragment).commit()
+    }
+
+    protected fun replaceFragment(fragmentId: Int, fragment: Fragment, tag: String) {
+        val transaction = childFragmentManager.beginTransaction()
+        transaction.replace(fragmentId, fragment, tag).commit()
+    }
+
+    protected fun replaceFragmentAllowingStateLoss(fragmentId: Int, fragment: Fragment) {
+        val transaction = childFragmentManager.beginTransaction()
+        transaction.replace(fragmentId, fragment).commitAllowingStateLoss()
+    }
+
+    protected fun replaceFragmentAllowingStateLoss(fragmentId: Int, fragment: Fragment, tag: String) {
+        val transaction = childFragmentManager.beginTransaction()
+        transaction.replace(fragmentId, fragment, tag).commitAllowingStateLoss()
+    }
+
 }

@@ -114,4 +114,14 @@ abstract class AbstractSururuActivity : AppCompatActivity(), IStartActivityDeleg
         transaction.replace(fragmentId, fragment, tag).commit()
     }
 
+    protected fun replaceFragmentAllowingStateLoss(fragmentId: Int, fragment: Fragment) {
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(fragmentId, fragment).commitAllowingStateLoss()
+    }
+
+    protected fun replaceFragmentAllowingStateLoss(fragmentId: Int, fragment: Fragment, tag: String) {
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(fragmentId, fragment, tag).commitAllowingStateLoss()
+    }
+
 }
